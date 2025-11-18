@@ -14,14 +14,14 @@ function Game() {
     });
 
     // Check if user is logged in
-    useEffect(() => {
+   /* useEffect(() => {
         const storedUser = localStorage.getItem("user");
         if (!storedUser) {
             alert("You must be logged in to play.");
             navigate("/login");
         }
     }, [navigate]);
-
+*/
     function handleClickSpawnEnemies() {
         sendMessage("GameObject", "SpawnEnemies");
     }

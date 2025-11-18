@@ -88,3 +88,16 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   background: linear-gradient(90deg, #f8fafc 0%, #e2e8f0 100%);
 }
+.centered-unity {
+  width: 100%;
+  max-width: 1100px; /* ajusta si quieres */
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
