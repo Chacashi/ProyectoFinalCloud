@@ -1,13 +1,13 @@
 
 
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useEffect } from "react";
+//import { useNavigate } from "react-router-dom";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game4(){
-     const navigate = useNavigate();
+     
 
-       const { unityProvider, unload} = useUnityContext({
+       const { unityProvider} = useUnityContext({
         loaderUrl: "Game4/HouseLand.loader.js",
         dataUrl: "Game4/HouseLand.data.br",
         frameworkUrl: "Game4/HouseLand.framework.js.br",
@@ -15,11 +15,6 @@ function Game4(){
     });
 
     
-  useEffect(() => {
-    return () => {
-      unload();
-    };
-  }, []);
 
 
     return(

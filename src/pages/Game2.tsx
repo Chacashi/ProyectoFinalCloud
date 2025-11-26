@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useEffect } from "react";
+//import { useNavigate } from "react-router-dom";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game2(){
-     const navigate = useNavigate();
+     
 
-       const { unityProvider, unload} = useUnityContext({
+       const { unityProvider} = useUnityContext({
         loaderUrl: "Game2/BrainrotBowling.loader.js",
         dataUrl: "Game2/BrainrotBowling.data.br",
         frameworkUrl: "Game2/BrainrotBowling.framework.js.br",
@@ -13,11 +13,7 @@ function Game2(){
     });
 
     
-  useEffect(() => {
-    return () => {
-      unload();
-    };
-  }, []);
+
 
     return(
           <>

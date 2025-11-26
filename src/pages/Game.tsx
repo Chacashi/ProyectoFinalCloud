@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useEffect } from "react";
+//import { useNavigate } from "react-router-dom";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game() {
-    const navigate = useNavigate();
+   
 
     // Unity context setup
     const { unityProvider, sendMessage } = useUnityContext({
