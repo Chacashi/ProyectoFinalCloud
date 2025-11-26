@@ -1,37 +1,32 @@
-
-
 import { useEffect } from "react";
-//import { useNavigate } from "react-router-dom";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
-function Game4(){
-     
+function Game4() {
 
-       const { unityProvider, sendMessage} = useUnityContext({
+    const { unityProvider, unload } = useUnityContext({
         loaderUrl: "Game4/HouseLand.loader.js",
         dataUrl: "Game4/HouseLand.data.br",
         frameworkUrl: "Game4/HouseLand.framework.js.br",
         codeUrl: "Game4/HouseLand.wasm.br",
+        streamingAssetsUrl: "Game4/StreamingAssets",
     });
 
     useEffect(() => {
-            return () => {
-                // 1. Silenciar el player de Unity antes de enviarle la instrucción de cierre
-                // Esto silencia la salida de audio del <canvas> de Unity.
-                
-    
-                console.log("Saliendo del juego, enviando QuitGame a Unity...");
-                try {
-                    sendMessage("WebCommunication", "DestroyGame");
-                } catch (e) {
-                    console.warn("No se pudo enviar QuitGame (Unity quizá ya cerró)");
-                }
-            };
-        }, [sendMessage]);
+        // La función de limpieza
+        return () => {
+            // QUITAMOS 'async' de la línea de arriba y 'await' de aquí abajo.
+            // Simplemente llamamos a unload() y manejamos el error si ocurre.
+            unload().catch((e) => {
+                console.warn("Unity no estaba listo para descargarse o ya se cerró:", e);
+            });
+            
+            console.log("Orden de descarga enviada a Unity.");
+        };
+    }, [unload]); 
 
 
-    return(
-          <>
+    return (
+        <>
             <div className="centered-container">
                 <div className="centered-content">
                     <h1 className="centered-title">Game 4</h1>
@@ -40,7 +35,7 @@ function Game4(){
             </div>
         </>
     );
-    
+
 }
 
 export default Game4;

@@ -3,7 +3,7 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game3() {
 
-    const { unityProvider, sendMessage } = useUnityContext({
+    const { unityProvider, unload} = useUnityContext({
         loaderUrl: "Game3/TengoFeMano.loader.js",
         dataUrl: "Game3/TengoFeMano.data.br",
         frameworkUrl: "Game3/TengoFeMano.framework.js.br",
@@ -12,20 +12,17 @@ function Game3() {
 
  
    useEffect(() => {
+        // La función de limpieza
         return () => {
-            // 1. Silenciar el player de Unity antes de enviarle la instrucción de cierre
-            // Esto silencia la salida de audio del <canvas> de Unity.
+            // QUITAMOS 'async' de la línea de arriba y 'await' de aquí abajo.
+            // Simplemente llamamos a unload() y manejamos el error si ocurre.
+            unload().catch((e) => {
+                console.warn("Unity no estaba listo para descargarse o ya se cerró:", e);
+            });
             
-
-            console.log("Saliendo del juego, enviando QuitGame a Unity...");
-            try {
-                sendMessage("WebCommunication", "DestroyGame");
-            } catch (e) {
-                console.warn("No se pudo enviar QuitGame (Unity quizá ya cerró)");
-            }
+            console.log("Orden de descarga enviada a Unity.");
         };
-    }, [sendMessage]);
-
+    }, [unload]); 
     return(
         <>
             <div className="centered-container">
