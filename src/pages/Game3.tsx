@@ -4,18 +4,17 @@ import { Unity, useUnityContext } from "react-unity-webgl";
 function Game3() {
 
     const { unityProvider, unload} = useUnityContext({
-        loaderUrl: "Game3/TengoFeMano.loader.js",
-        dataUrl: "Game3/TengoFeMano.data.br",
-        frameworkUrl: "Game3/TengoFeMano.framework.js.br",
-        codeUrl: "Game3/TengoFeMano.wasm.br",
+        loaderUrl: "Game3/AnimeTrivia.loader.js",
+        dataUrl: "Game3/AnimeTrivia.data.br",
+        frameworkUrl: "Game3/AnimeTrivia.framework.js.br",
+        codeUrl: "Game3/AnimeTrivia.wasm.br",
     });
 
  
    useEffect(() => {
-        // La función de limpieza
+        
         return () => {
-            // QUITAMOS 'async' de la línea de arriba y 'await' de aquí abajo.
-            // Simplemente llamamos a unload() y manejamos el error si ocurre.
+            
             unload().catch((e) => {
                 console.warn("Unity no estaba listo para descargarse o ya se cerró:", e);
             });

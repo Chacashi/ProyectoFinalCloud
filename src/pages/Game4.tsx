@@ -12,10 +12,8 @@ function Game4() {
     });
 
     useEffect(() => {
-        // La función de limpieza
         return () => {
-            // QUITAMOS 'async' de la línea de arriba y 'await' de aquí abajo.
-            // Simplemente llamamos a unload() y manejamos el error si ocurre.
+  
             unload().catch((e) => {
                 console.warn("Unity no estaba listo para descargarse o ya se cerró:", e);
             });

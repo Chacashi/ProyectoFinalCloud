@@ -1,10 +1,10 @@
-//import { useEffect } from "react";
-//import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 function Game() {
    
-
+    const navigate = useNavigate();
     // Unity context setup
     const { unityProvider, sendMessage } = useUnityContext({
         loaderUrl: "/UnityReact.loader.js",
@@ -14,14 +14,14 @@ function Game() {
     });
 
     // Check if user is logged in
-   /* useEffect(() => {
+   useEffect(() => {
         const storedUser = localStorage.getItem("user");
         if (!storedUser) {
             alert("You must be logged in to play.");
             navigate("/login");
         }
     }, [navigate]);
-*/
+
     function handleClickSpawnEnemies() {
         sendMessage("GameObject", "SpawnEnemies");
     }

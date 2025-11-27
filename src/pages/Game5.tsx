@@ -1,22 +1,38 @@
+import { useEffect } from "react";
+import { Unity, useUnityContext } from "react-unity-webgl";
 
-function Game5(){
-    return(
-          <>
-            <div className="centered-container"> {/* React ya conoce esta clase por App.tsx */}
+function Game5() {
+
+    const { unityProvider, unload } = useUnityContext({
+        loaderUrl: "Game5/MateoSobreRuedas.loader.js",
+        dataUrl: "Game5/MateoSobreRuedas.data.br",
+        frameworkUrl: "Game5/MateoSobreRuedas.framework.js.br",
+        codeUrl: "Game5/MateoSobreRuedas.wasm.br",
+    });
+
+    useEffect(() => {
+        return () => {
+  
+            unload().catch((e) => {
+                console.warn("Unity no estaba listo para descargarse o ya se cerró:", e);
+            });
+            
+            console.log("Orden de descarga enviada a Unity.");
+        };
+    }, [unload]); 
+
+
+    return (
+        <>
+            <div className="centered-container">
                 <div className="centered-content">
                     <h1 className="centered-title">Game 5</h1>
-                    
-                    <iframe
-                        src="/Game5/index.html"
-                        title="Game 5"
-                        className="centered-unity" // React también conoce esta
-                        style={{ border: "none" }} 
-                    ></iframe>
-                  
+                    <Unity unityProvider={unityProvider} className="centered-unity" />
                 </div>
             </div>
         </>
     );
+
 }
 
 export default Game5;
