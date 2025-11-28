@@ -6,10 +6,10 @@ function Game1() {
   const [time, setTime] = useState("00:00"); 
 
   const { unityProvider, sendMessage, addEventListener, removeEventListener,unload } = useUnityContext({
-    loaderUrl: "Game1/Dota Cards Web.loader.js",
-    dataUrl: "Game1/Dota Cards Web.data.br",
-    frameworkUrl: "Game1/Dota Cards Web.framework.js.br",
-    codeUrl: "Game1/Dota Cards Web.wasm.br",
+    loaderUrl: "Game1/Build.loader.js",
+    dataUrl: "Game1/Build.data.br",
+    frameworkUrl: "Game1/Build.framework.js.br",
+    codeUrl: "Game1/Build.wasm.br",
   });
 
   const handleSetScore = useCallback((newTime:any) => {
