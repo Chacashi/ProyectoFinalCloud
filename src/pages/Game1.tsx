@@ -42,11 +42,23 @@ function Game1() {
     <div className="centered-container">
       <div className="centered-content">
         <h1 className="centered-title">Game 1</h1>
+        
         <h2>Tiempo: {time}</h2>
         <Fragment>
           <Unity unityProvider={unityProvider} className="centered-unity" />
           <p></p>
           <button onClick={ResetGame}>Reset Game</button>
+           <div className="game-description">
+        <h2>Descripción</h2>
+        <p>
+          En este juego deberás encontrar los pares de las cartas en el menor tiempo posible.
+        </p>
+
+        <h2>Instrucciones</h2>
+        <ul>
+          <li>Clic Izquierdo para seleccionar una carta</li>
+        </ul>
+      </div>
         </Fragment>
       </div>
     </div>

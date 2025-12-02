@@ -101,3 +101,10 @@
   align-items: center;
   width: 100%;
 }
+
+.game-description {
+  background: #ffffff22;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}

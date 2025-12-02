@@ -67,6 +67,17 @@ function Game3() {
                     <p></p>
                      <button onClick={ChooseAlternative}>Opcion A</button>
                      <button onClick={ChooseAlternativeB}>Opcion B</button>
+                      <div className="game-description">
+        <h2>Descripción</h2>
+        <p>
+          En este juego deberás escoger la opción correcta sobre la pregunta mostrada.
+        </p>
+
+        <h2>Instrucciones</h2>
+        <ul>
+          <li>Clikea uno de los botones dependiendo de la opción</li>
+        </ul>
+      </div>
                      </Fragment>
                 </div>
             </div>

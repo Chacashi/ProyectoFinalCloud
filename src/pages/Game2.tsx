@@ -70,6 +70,18 @@ function Game2(){
                     <p></p>
                     <button onClick={LaunchBall}>Lanzar Bola</button>
                     <button onClick={ResetGame}>Reiniciar Juego</button>
+                     <div className="game-description">
+        <h2>Descripción</h2>
+        <p>
+          En este juego deberás lanzar la bola y derribar todos los Tung Tung Sahur. El jugador con
+          el mayor puntaje gana.
+        </p>
+
+        <h2>Instrucciones</h2>
+        <ul>
+          <li>Con A y D posiciona la bola y clikea el boton para lanzar</li>
+        </ul>
+      </div>
                     </Fragment>
                 </div>
             </div>
