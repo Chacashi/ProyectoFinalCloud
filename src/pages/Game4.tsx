@@ -75,13 +75,12 @@ function Game4() {
                      <button onClick={OnDoubt}>Ayuda</button>
                      <div className="game-description">
         <h2>Descripción</h2>
-        <p>
-          En este juego deberás escoger la opción correcta sobre la pregunta mostrada.
+        <p>En la noche de Halloween, adéntrate en HouseLand , una mansión embrujada gobernada por el enigmático Rey Calabaza.
         </p>
 
         <h2>Instrucciones</h2>
         <ul>
-          <li>Clikea uno de los botones dependiendo de la opción</li>
+          <li>Usa el mouse y  teclado</li>
         </ul>
       </div>
                      </Fragment>

@@ -11,6 +11,16 @@ function Game6(){
                         className="centered-unity" // React también conoce esta
                         style={{ border: "none" }} 
                     ></iframe>
+                    <div className="game-description">
+        <h2>Descripción</h2>
+        <p>
+          El Gran Chef es un juego que promueve la cultura gastronomica.
+        </p>
+
+        <h2>Instrucciones</h2>
+        
+          <li>Usa el mouse para arrastar los ingrendientes y obtener nuevos.</li> 
+      </div>
                   
                 </div>
             </div>

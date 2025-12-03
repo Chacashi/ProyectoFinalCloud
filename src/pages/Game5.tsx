@@ -47,6 +47,18 @@ function Game5() {
                     <Unity unityProvider={unityProvider} className="centered-unity" />
                     <p></p>
                      <button onClick={OnOptions}>Opciones</button>
+                     <div className="game-description">
+        <h2>Descripción</h2>
+        <p>
+          El videojuego Mateo sobre ruedas aborda la problemática de la falta de empatía y comprensión hacia las personas 
+          que utilizan silla de ruedas.
+        </p>
+
+        <h2>Instrucciones</h2>
+        
+          <li>Desplazate con ASWD y evita los obstaculos y autos. </li>
+        
+      </div>
                      </Fragment>
                 </div>
             </div>
